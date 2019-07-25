@@ -1,0 +1,76 @@
+server:
+  port: 8000
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://192.168.199.118:3306/haw_user?characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: Admin@c5*888
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    mongodb:
+      uri: mongodb://steamproxy:VYTSyw5OtjurzaHK@dds-j6c7230930ae69041423-pub.mongodb.rds.aliyuncs.com:3717,dds-j6c7230930ae69042543-pub.mongodb.rds.aliyuncs.com:3717/steam_proxy?replicaSet=mgset-8156667
+
+redis:
+  host: localhost
+  port: 6379
+  password:
+  timeout: 3000
+  pool:
+      max-active: 3000
+      max-idle: 1000
+      max-wait: 1500
+      min-idle: 5
+
+
+
+thread:
+  pool:
+    async:
+      task:
+        core-pool-size: 10
+        max-pool-size : 15
+        queue-capacity: 500
+        keepalive-seconds: 60
+        allow-core-thread-timeout: true
+        reject-handler-class:
+        reject-handler:
+
+http:
+  proxy:
+    enabled: false
+    host: 127.0.0.1
+    port: 1085
+  pool:
+    maxSize: 200
+  client:
+    connect:
+      timeout:
+        ms: 6000
+    read:
+      timeout:
+        ms: 6000
+    retry:
+      scene: 5006,401,403
+
+steam:
+  proxy:
+    api:
+      enabled: true
+      source: https://api.steampowered.com
+      target: http://api.steam.c5game.com
+    help:
+      enabled:
+      source:
+      target:
+    community:
+      enabled:
+      source: https://steamcommunity.com
+      target: http://steam.zabite.net
+  reserve:
+     id: 76561198825285111
+
+
+
+
